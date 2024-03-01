@@ -1,7 +1,6 @@
 import java.util.HashMap;
-import java.lang.Math;
 
-public class MajorityElement_169 {
+public class MajorityElement {
    public static void main(String args[]) {
       Solution sol = new Solution();
       int[] nums = {2,2,1,1,1,2,2,1,1,1};
