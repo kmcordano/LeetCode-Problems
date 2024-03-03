@@ -1,3 +1,4 @@
 #misc
 *.class
+*.txt
 .vscode
