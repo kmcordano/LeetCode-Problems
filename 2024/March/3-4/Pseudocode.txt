@@ -1,0 +1,27 @@
+power = power
+score = 0
+max = 0
+sort(tokens)
+if tokens.length == 0 || power < tokens[0]
+  return 0
+upPointer = 0
+downPointer = tokens.length - 1
+moveMade = false
+while moveMade
+  moveMade = false
+  while up < tokens.length && tokens[up] != -1 && power >= tokens[up]
+    moveMade = true
+    power -= tokens[up]
+    tokens[up] = -1
+    score++
+    up++
+    if score > max
+      max = score
+  if down >= 0 && tokens[down] != -1 && score > 0
+    moveMade = true
+    power += tokens[down]
+    tokens[down] = -1
+    score--
+    down--
+return max
+    

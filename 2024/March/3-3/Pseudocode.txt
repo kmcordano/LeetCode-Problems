@@ -1,0 +1,42 @@
+approach 1
+iterate through list and count
+iterate until count - 1, connect count - 1 to count + 1
+
+node = head
+length = 0
+/* Get length */
+while node is not null
+  length++
+  node = node.next
+
+/* Find node to be removed */
+prev = null
+node = head
+for i = length - n; i > 0; i--
+  prev = node
+  node = node.next
+
+/* Connect front to next */
+if prev is null
+  return node.next
+else
+  prev.next = node.next
+
+
+
+appoach 2
+recursive call, return 1 at end
+remove node once return call reaches n
+
+recursiveRemove(null, head)
+recursiveRemove(TreeNode prev, TreeNode node) -> int
+  if node is null
+    return 1
+  
+  int depth = recursiveRemove(node, node.next)
+  if depth = n
+    if prev == null
+      return node.next
+    else
+      prev.next = node.next
+  return depth + 1

@@ -1,0 +1,24 @@
+pre = 0		// Prefix pointer
+suf = s.length - 1	// Suffix pointer
+
+// Base case
+if s[pre] != s[suf]
+  return length
+
+curChar = s[pre]
+while pre < suf	// Loop through string
+  while pre < suf && s[pre] == curChar	// Iterate through prefix
+    pre++
+
+  if pre == suf	// If the prefix catches up to the suffix, the full string can be removed
+    return 0
+
+  while pre < suf && s[suf] == curChar	// Iterate through suffix
+    suff--
+
+  if s[pre] == s[suf]	// Once the pre/suffix iterated, if the character is the same, loop
+    curChar = s[pre]
+  else	// Otherwise, the remaining string is complete
+    return suf - pre + 1	// + 1 for index inclusive
+
+return suf - pre + 1	// This is reached when theres one remaining character
