@@ -1,0 +1,19 @@
+fast = head
+slow = head
+loops = false
+
+while not loops
+  if fast is null
+    break
+
+  fast = fast.next
+  if fast is null
+    break 
+  fast = fast.next
+  slow = slow.next
+  if fast == null
+    break
+  if fast == slow
+    loops = true
+
+return loops
