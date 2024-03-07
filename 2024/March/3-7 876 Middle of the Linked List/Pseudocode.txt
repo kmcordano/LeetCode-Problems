@@ -1,0 +1,8 @@
+fast = head
+slow = head
+
+while fast not null and fast.next not null
+  fast = fast.next.next
+  slow = slow.next
+
+return slow
