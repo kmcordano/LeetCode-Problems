@@ -1,0 +1,14 @@
+map = hashmap
+max = 0
+for element in nums
+  newFreq = map[element] + 1
+  if newFreq > max
+    max = newFreq
+  map.update(nums, newFreq)
+
+count = 0
+for element in map
+  if map[element] = max
+  count += max
+
+return count
