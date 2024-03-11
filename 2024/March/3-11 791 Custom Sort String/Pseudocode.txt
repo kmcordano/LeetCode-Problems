@@ -1,0 +1,10 @@
+priorityMap = new hashmap
+priority = 1
+for i = order.length; i >= 0; i--
+  priorityMap.set(order[i], priority)
+  priority++
+s.sort(compare)
+return s
+
+int compare(char a, char b) 
+  return priorityMap[a] - priorityMap[b]
