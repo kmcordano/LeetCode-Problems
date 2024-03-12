@@ -1,0 +1,20 @@
+if(head is null) {
+  return head
+}
+
+head.next = removeZeroSumSublists(head.next)
+
+to = head
+sum = 0
+
+while(to not null) {
+  sum += to.val
+  if(sum == 0) {
+    return to.next
+  }
+  else {
+    to = to.next
+  }
+}
+
+return head
