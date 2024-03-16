@@ -1,0 +1,65 @@
+left = 0
+right = 0
+acc = 0
+max = 0
+
+for(left = 0; left < nums.length; left++)
+  for(right = left; right < nums.length; right++)
+    acc += (nums[right] == 0) ? 1 : -1;
+    if acc == 0
+      if right - left > max
+	max = right - left  
+  acc = 0  
+
+
+
+start = 0
+
+recursiveResult(start)
+  if start >= nums.length
+    return 0
+
+  acc = recursiveResult(start + 1)
+  if nums[start] == 0 
+    acc += 1
+  else
+    acc -= 1
+
+  if acc == 0
+    if nums.length - start > max
+      max = nums.length - start
+
+  return acc
+
+
+
+sums = new int[nums.length]
+acc = 0
+firstInstance = new Map
+maxZero = -1
+maxInterval = 0
+for int i = 0; i < nums.length; i++
+  if nums[i] == 0
+    acc--
+  else
+    acc++
+
+  if acc == 0
+    maxZero = i
+  else
+    if !firstInstance.has(acc)
+      firstInstance.put(acc, i)
+    else
+      if i - firstInstance.get(acc) > maxInterval
+        maxInterval = i - firstInstance.get(acc)  
+
+  sums[i] = acc
+
+if maxZero > maxInterval
+  return maxZero + 1
+
+return maxInterval
+
+
+
+  
