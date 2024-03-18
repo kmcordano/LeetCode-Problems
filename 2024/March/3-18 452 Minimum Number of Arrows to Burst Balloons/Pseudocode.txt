@@ -1,0 +1,14 @@
+sort points by ending x
+currentPairPointer = 0
+x = points[0][1]
+arrowsThrown = 1
+while currentPairPointer < points.length
+  if(x >= points[currentPairPointer][0] 
+  && x <= points[currentPairPointer][1])
+    currentX++
+  else
+    arrowsThrown++
+    x = points[currentPairPointer][1]
+return arrowsThrown
+
+
